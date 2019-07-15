@@ -78,12 +78,14 @@ public class Stable {
             }};
 
     public static void main(String[] args) {
+        // part 1 - match
         Map<String, String> matches = match(guys, guyPrefers, girlPrefers);
         for (Map.Entry<String, String> couple : matches.entrySet()) {
             System.out.println(
                     couple.getKey() + " is engaged to " + couple.getValue());
         }
-        if (checkMatches(guys, girls, matches, guyPrefers, girlPrefers)) {
+        // part 2 - check
+        if (checkMatches(guys, girls, matches, guyPrefers, girlPrefers)) { // if true
             System.out.println("Marriages are stable");
         } else {
             System.out.println("Marriages are unstable");
@@ -100,7 +102,7 @@ public class Stable {
         }
     }
 
-    // returns the match list
+    // returns the matched list
     private static Map<String, String> match(List<String> guys,
                                              Map<String, List<String>> guyPrefers,
                                              Map<String, List<String>> girlPrefers) {
